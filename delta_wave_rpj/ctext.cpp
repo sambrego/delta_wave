@@ -10,7 +10,7 @@ CText::CText()
 bool CText::InitText(char* srcstr,COORDS crds,float scale,bool isautoscale,COLOR col,HORIZ_ALIGN align,VERT_ALIGN valign)
 {
 	if(strlen(srcstr)>=MAX_TEXT_LENGHT)return false;
-	strcpy(str,srcstr);
+	strcpy_s(str,srcstr);
 	lenght = strlen(srcstr);
 	coords = crds;
 	textscale = scale;
@@ -28,7 +28,7 @@ bool CText::InitText(char* srcstr,COORDS crds,float scale,bool isautoscale,COLOR
 bool CText::SetText(char* srcstr)
 {	
 	if(strlen(srcstr)>=MAX_TEXT_LENGHT)return false;
-	strcpy(str,srcstr);
+	strcpy_s(str,srcstr);
 
 	if((autoscale)&&(lenght!=0))textscale=textscale*lenght;
 	lenght = strlen(srcstr);
@@ -40,9 +40,9 @@ bool CText::SetText(char* srcstr)
 bool CText::SetLongIntAsText(long srclong)
 {	
 	char srcstr[MAX_TEXT_LENGHT];
-	ltoa(srclong,srcstr,10);
+	_ltoa_s(srclong,srcstr,10);
 	if(strlen(srcstr)>=MAX_TEXT_LENGHT)return false;
-	strcpy(str,srcstr);
+	strcpy_s(str,srcstr);
 
 	if((autoscale)&&(lenght!=0))textscale=textscale*lenght;
 	lenght = strlen(srcstr);

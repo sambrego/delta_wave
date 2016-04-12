@@ -16,7 +16,7 @@
 #include <windows.h>
 #include <GL/gl.h>
 #include <GL/glu.h>
-#include <GL/glaux.h>
+//#include <GL/glaux.h>
 #include <time.h>
 #include <string.h>
 #include <stdlib.h>

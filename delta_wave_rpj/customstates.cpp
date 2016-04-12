@@ -4,7 +4,7 @@
 //----------------==Main Menu States==----------------------
 
 //CMainMenuState
-const MAIN_MENU_STARTING_TIME=400;
+const int MAIN_MENU_STARTING_TIME=400;
 bool CMainMenuState::Init(CStateManager* StateManager_new,CParts* Parts_new)
 {
 	CState::Init(StateManager_new,Parts_new);
@@ -129,7 +129,7 @@ bool CMainMenuExitState::OnUpAction()
 //----------------==Delta Logo States==----------------------
 
 //CDeltaLogoState
-const LOGO_STARTING_TIME=400;
+const int LOGO_STARTING_TIME=400;
 bool CDeltaLogoState::Init(CStateManager* StateManager_new,CParts* Parts_new)
 {
 	CState::Init(StateManager_new,Parts_new);
@@ -182,7 +182,7 @@ bool COutroLogoState::OnFinish()
 //end of COutroLogoState
 
 //----------------==About State==----------------------
-const ABOUT_MENU_STARTING_TIME=400;
+const int ABOUT_MENU_STARTING_TIME=400;
 bool CAboutMenuState::Init(CStateManager* StateManager_new,CParts* Parts_new)
 {
 	CState::Init(StateManager_new,Parts_new);
@@ -225,7 +225,7 @@ bool CAboutMenuState::OnCancelAction()
 	return true;
 }
 //----------------==Game Menu States==----------------------
-const GAME_MENU_STARTING_TIME=400;
+const int GAME_MENU_STARTING_TIME=400;
 bool CGameMenuState::InitSolve(CSolve* solve_new)
 {
 	solve = solve_new;
@@ -432,17 +432,17 @@ bool CGameMenuGoState::OnOkAction()
 }
 
 //----------------==Game State==----------------------
-const GAME_STARTING_TIME=3000;
-const JUMP_TIME=3000;
-const FADE_TIME=3000;
-const RISE_TIME=100;
-const CAMERA_Z=-2;
+const int GAME_STARTING_TIME=3000;
+const int JUMP_TIME=3000;
+const int FADE_TIME=3000;
+const int RISE_TIME=100;
+const int CAMERA_Z=-2;
 bool CGameState::Init(CStateManager* StateManager_new,CParts* Parts_new)
 {
 	CState::Init(StateManager_new,Parts_new);
 	ProcBegin = GAME_STARTING_TIME;
 	ProcEnd = ProcBegin + 1000;
-	TotalFinish = ProcEnd+2000;
+	TotalFinish = ProcEnd+3500;
 	EndProcOnTimer = false;
 	BaseColor.SetColor(COLOR_DARK_BLUE);
 	return true;
@@ -513,7 +513,7 @@ bool CGameState::OnProcess()
 
 bool CGameState::OnEndUp()
 {
-	Parts->SetFadeAll(2000);
+	Parts->SetFadeAll(4000);
 	return true;
 }
 

@@ -1,6 +1,6 @@
 //ctext.h
 //CText class
-const MAX_TEXT_LENGHT=255;
+const int MAX_TEXT_LENGHT=255;
 enum HORIZ_ALIGN{HA_LEFT,HA_RIGHT,HA_CENTER};
 enum VERT_ALIGN{VA_TOP,VA_BOTTOM,VA_CENTER};
 class CText:public CGraphObjMix{
